@@ -1,8 +1,21 @@
 import java.util.*;
-
 public class Main {
 	
+	//very first input menu
+	public static int calculateOrBuild() {
+		for(int i=0;i<25;i++) {
+			System.out.println();
+		}
+		System.out.println("Enter 1 to calculate the plates needed to load a weight");
+		System.out.println("Enter 2 to build a custum plate scheme");
+		System.out.println("Enter 3 to quit");
+		Scanner userInput = new Scanner(System.in);
+		int input = userInput.nextInt();
+		return input;
+	}
+
 	//gets user input using menu below and returns as "input"
+	//menu for building custom loading scheme
 	public static int getInput() {
 		String menu = "Type a number then press enter...\n" +
 				"-----------------------------------------------------\n" +
@@ -21,7 +34,7 @@ public class Main {
 		return input;
 	}
 	
-	//calls the correct function according to the input
+	//calls the correct function according to the input while building custom scheme
 	public static void useInput(int input, Stack bar) {
 		if(input == 1) {
 			bar.addPlate(25.0);
@@ -54,22 +67,39 @@ public class Main {
 	
 
 	public static void main(String[] args) {
-		
-		//initialize barbell
-		Stack barTest = new Stack(20);
 
-		//main loop
 		while(true) {
-			int input = getInput();
-			for(int i=0;i<25;i++) {
-				System.out.println();
+			//build custom loading scheme or enter a value and see how to load it
+			int wantToCalculate = calculateOrBuild();
+			if(wantToCalculate == 1) {
+				//calculate function here
 			}
-			useInput(input, barTest);
-			if(input == 0) {
+			else if(wantToCalculate == 2){
+				//initialize barbell
+				Stack barTest = new Stack(20);
+
+				//main loop
+				while(true) {
+					int input = getInput();
+					for(int i=0;i<25;i++) {
+						System.out.println();
+					}
+					useInput(input, barTest);
+					if(input == 0) {
+						break;
+					}
+					barTest.showBarInfo();
+				}
+			}
+			else if(wantToCalculate == 3){
 				break;
 			}
-			barTest.showBarInfo();
+
 		}
+
+		
+		
+		
 		
 		
 	}

@@ -101,11 +101,6 @@ public class Main extends LoadCalc {
 			}
 
 		}
-
-		
-		
-		
-		
 		
 	}
 

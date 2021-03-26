@@ -92,14 +92,6 @@ public class Stack {
 		return size == 0;
 	}
 
-	/**public Node[] findBestLoadSequence(double kiloInput) {
-		boolean rounded;
-		double kilo;
-		if(kiloInput % 2.5 != 0) {
-			kilo = kiloInput * 2.5 / 2.5;
-		}
-	}**/
-
 	public static void main(String[] args) {
 		double num = 23;
 		num = num * 2.5/2.5;

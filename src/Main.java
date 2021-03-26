@@ -1,5 +1,5 @@
 import java.util.*;
-public class Main {
+public class Main extends LoadCalc {
 	
 	//very first input menu
 	public static int calculateOrBuild() {
@@ -72,7 +72,12 @@ public class Main {
 			//build custom loading scheme or enter a value and see how to load it
 			int wantToCalculate = calculateOrBuild();
 			if(wantToCalculate == 1) {
-				//calculate function here
+				//initualize barbell
+				Stack barTest = new Stack(20);
+				String unit = getUnit();
+				double weight = getWeight();
+				calculateLoad(weight, unit, barTest);
+				barTest.showBarInfo();
 			}
 			else if(wantToCalculate == 2){
 				//initialize barbell

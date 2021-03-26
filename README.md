@@ -1,6 +1,6 @@
-# BarMath Bare Bones
+# BarMath
 
-- Bare bones prototype for future flutter project
+- Command line prototype for future flutter project
 - App to help with loading a barbell in kilo plates for powerlifting
 - Works on command line
 - Written in java since it is similar to dart (used in flutter)

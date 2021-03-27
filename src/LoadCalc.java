@@ -2,9 +2,14 @@ import java.util.*;
 
 public class LoadCalc {
 
-    //prompts user for a unit then returns it
+    //prompts user for the unit of weight they will enter
     public static String getUnit() {
-        System.out.println("Enter 1 for pounds or 2 for kilos");
+        for(int i=0;i<100;i++) {
+			System.out.println();
+		}
+        System.out.println("What unit are you entering?");
+        System.out.println("Enter 1 for pounds.");
+        System.out.println("Enter 2 for kilos.");
         Scanner userInput = new Scanner(System.in);
 		int input = userInput.nextInt();
 		if(input == 1) {
@@ -15,14 +20,18 @@ public class LoadCalc {
         }
     }
 
+    //promts user for weight
     public static double getWeight() {
+        for(int i=0;i<100;i++) {
+			System.out.println();
+		}
         System.out.println("Enter the weight: ");
         Scanner userInput = new Scanner(System.in);
 		double input = userInput.nextDouble();
 		return input;
     }
 
-    //edits a stack param to be as close as possible to num
+    //edits a stack param to be as close as possible to desired weight
     public static void calculateLoad(double num, String unit, Stack bar) {
         double weight = num;
         if(unit.equals("pounds")) {
@@ -64,8 +73,4 @@ public class LoadCalc {
         } 
    }
 
-
-    public static void main(String[] args) {
-
-    }
 }

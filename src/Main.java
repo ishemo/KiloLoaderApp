@@ -3,18 +3,20 @@ public class Main extends LoadCalc {
 	
 	//very first input menu
 	public static int calculateOrBuild() {
-		for(int i=0;i<25;i++) {
+		for(int i=0;i<3;i++) {
 			System.out.println();
 		}
-		System.out.println("Enter 1 to calculate the plates needed to load a weight");
-		System.out.println("Enter 2 to build a custum plate scheme");
-		System.out.println("Enter 3 to quit");
+		System.out.println("Enter 1 to get the load scheme for a specific weight.");
+		System.out.println("Enter 2 to build a custum plate scheme.");
+		System.out.println("Enter 3 to quit.");
 		Scanner userInput = new Scanner(System.in);
 		int input = userInput.nextInt();
+		for(int i=0;i<100;i++) {
+			System.out.println();
+		}
 		return input;
 	}
 
-	//gets user input using menu below and returns as "input"
 	//menu for building custom loading scheme
 	public static int getInput() {
 		String menu = "Type a number then press enter...\n" +
@@ -34,7 +36,7 @@ public class Main extends LoadCalc {
 		return input;
 	}
 	
-	//calls the correct function according to the input while building custom scheme
+	//calls the correct function according to the input while building a custom scheme
 	public static void useInput(int input, Stack bar) {
 		if(input == 1) {
 			bar.addPlate(25.0);
@@ -64,26 +66,25 @@ public class Main extends LoadCalc {
 			bar.clearBar();
 		}
 	}
-	
 
 	public static void main(String[] args) {
 
 		while(true) {
-			//build custom loading scheme or enter a value and see how to load it
 			int wantToCalculate = calculateOrBuild();
 			if(wantToCalculate == 1) {
 				//initualize barbell
 				Stack barTest = new Stack(20);
 				String unit = getUnit();
 				double weight = getWeight();
+				for(int i=0;i<100;i++) {
+					System.out.println();
+				}
 				calculateLoad(weight, unit, barTest);
 				barTest.showBarInfo();
 			}
 			else if(wantToCalculate == 2){
 				//initialize barbell
 				Stack barTest = new Stack(20);
-
-				//main loop
 				while(true) {
 					int input = getInput();
 					for(int i=0;i<25;i++) {

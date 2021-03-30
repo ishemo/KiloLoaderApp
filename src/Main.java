@@ -6,8 +6,8 @@ public class Main extends LoadCalc {
 		for(int i=0;i<3;i++) {
 			System.out.println();
 		}
-		System.out.println("Enter 1 to get the load scheme for a specific weight.");
-		System.out.println("Enter 2 to build a custum plate scheme.");
+		System.out.println("Enter 1 to enter a weight and see how to load it.");
+		System.out.println("Enter 2 to add plates on a bar to calculate your desired weight.");
 		System.out.println("Enter 3 to quit.");
 		Scanner userInput = new Scanner(System.in);
 		int input = userInput.nextInt();
@@ -36,7 +36,7 @@ public class Main extends LoadCalc {
 		return input;
 	}
 	
-	//calls the correct function according to the input while building a custom scheme
+	//calls the correct function according to the input while building a custom bar load
 	public static void useInput(int input, Stack bar) {
 		if(input == 1) {
 			bar.addPlate(25.0);
